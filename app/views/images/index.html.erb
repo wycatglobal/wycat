@@ -1,0 +1,40 @@
+<h1>Images#index</h1>
+<p>Find me in app/views/images/index.html.erb</p>
+
+<% if @albums.exists? %>
+<%= link_to "Upload Photo", upload_path %>
+<%= link_to "Add Album", new_album_path%>
+<% else %>
+<%= link_to "Add Album", new_album_path%>
+<% end %>
+
+<div class="album py-5 bg-light">
+<div class="container">
+	<% @albumNav.each do |album| %>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card mb-4 shadow-sm">
+					<% if album.album_coverimage.present? %>
+						<div style="height: 225px; width: 100%; display: block;">
+							<%= link_to (image_tag album.album_coverimage.url), album_path(album.id)%>
+						</div>
+					<% else %>
+					<img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="Thumbnail.png" data-holder-rendered="true">
+					<% end %>
+					<div class="card-body">
+						<p class="card-text"><%= album.description %></p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<%= link_to "go", album_path(album.id) %>
+								<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+								<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+							</div>
+							<small class="text-muted"><%= album.created_at.strftime("%Y-%m-%d") %></small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
+</div>
