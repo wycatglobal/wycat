@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
 
 	private
 	def getalbumNav
-		@albumNav = Album.all
+		@albumNav = Album.all.order('updated_at DESC')
 	end
 end
