@@ -1,25 +1,28 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
-
-<small class="pull-right"><%= link_to "Delete", album_path(@album.id), method: :delete,
-		data: { confirm: "Are you sure?" } %></small>
-<small class="pull-right"><%= link_to "Edit", edit_album_path %></small>
-<small class="pull-right"><%= link_to "Add", upload_path %></small>
-
-<%= link_to "Home", root_path %>
-
 <div class="container">
-	<div class="row">
-		<h2><%= @album.name %></h2>
+	<br/>
+	<h1>Albums#show</h1>
+	<p>Find me in app/views/albums/show.html.erb</p>
 
-		<% if @images.exists? %>
-			<% @images.each do |img| %>
-				<p><%= img.image_title %></p>
-				<p><%= img.image_description %></p>
-				<p><%= image_tag img.image_url%></p>	
+	<small class="pull-right"><%= link_to "Delete", album_path(@album.id), method: :delete,
+			data: { confirm: "Are you sure?" } %></small>
+	<small class="pull-right"><%= link_to "Edit", edit_album_path %></small>
+	<small class="pull-right"><%= link_to "Add", upload_path %></small>
+
+	<%= link_to "Home", root_path %>
+
+	<div class="container">
+		<div class="row">
+			<h2><%= @album.name %></h2>
+
+			<% if @images.exists? %>
+				<% @images.each do |img| %>
+					<p><%= img.image_title %></p>
+					<p><%= img.image_description %></p>
+					<p><%= image_tag img.image_url%></p>	
+				<% end %>
+			<% else %>
+			    <p>There are no images!</p>
 			<% end %>
-		<% else %>
-		    <p>There are no images!</p>
-		<% end %>
+		</div>
 	</div>
 </div>
