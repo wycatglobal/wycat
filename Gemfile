@@ -29,11 +29,12 @@ gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'rmagick'
+gem 'mini_magick', '~> 4.8'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'will_paginate', '~> 3.1.0'
 gem 'font-awesome-rails'
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
+gem 'ckeditor'
 
 #gem "autoprefixer-rails"
 #gem 'bootstrap-sass', '~> 3.3.7'
