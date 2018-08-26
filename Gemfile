@@ -32,6 +32,8 @@ gem 'jquery-rails'
 gem 'rmagick'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'will_paginate', '~> 3.1.0'
+gem 'font-awesome-rails'
+gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 
 #gem "autoprefixer-rails"
 #gem 'bootstrap-sass', '~> 3.3.7'
